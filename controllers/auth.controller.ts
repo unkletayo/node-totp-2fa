@@ -261,10 +261,19 @@ const DisableOTP = async (req: Request, res: Response) => {
         otp_enabled: updatedUser.otp_enabled,
       },
     });
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({
       status: "error",
       message: error.message,
     });
   }
+};
+
+export default {
+  RegisterUser,
+  LoginUser,
+  GenerateOTP,
+  VerifyOTP,
+  ValidateOTP,
+  DisableOTP,
 };
