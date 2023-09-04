@@ -27,6 +27,7 @@ async function main() {
     })
   })
 
+
   app.all("*", (req: Request, res: Response) => {
     return res.status(404).json({
       status: 'fail',
