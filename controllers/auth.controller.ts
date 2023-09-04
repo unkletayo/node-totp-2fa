@@ -1,9 +1,9 @@
-import crypto from "crypto";
 import { Prisma } from "@prisma/client";
-import { Request, Response, NextFunction } from "express";
-import { prisma } from "../server";
-import * as OTPAuth from "otpauth";
+import crypto from "crypto";
+import { NextFunction, Request, Response } from "express";
 import { encode } from "hi-base32";
+import * as OTPAuth from "otpauth";
+import { prisma } from "../server";
 
 const RegisterUser = async (
   req: Request,
@@ -40,7 +40,6 @@ const RegisterUser = async (
     });
   }
 };
-
 
 
 const LoginUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -268,6 +267,7 @@ const DisableOTP = async (req: Request, res: Response) => {
     });
   }
 };
+
 
 export default {
   RegisterUser,
